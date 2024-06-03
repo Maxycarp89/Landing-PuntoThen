@@ -1,52 +1,30 @@
-import video1 from "../assets/video1.mp4";
-import video2 from "../assets/video2.mp4";
+import logo from "../assets/profile-pictures/Cyan Modern Professional Technology Company Logo (1).png"
+
+
 
 const HeroSection = () => {
   return (
     <div className="flex flex-col items-center mt-6 lg:mt-20">
-      <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
-        VirtualR build tools
-        <span className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">
-          {" "}
-          for developers
-        </span>
-      </h1>
+      <div className="flex flex-col sm:flex-row items-center justify-center w-full">
+        <img src={logo} className="w-48 h-48 m-0 p-0 sm:w-72 md:w-96 lg:w-96" alt="logo" />
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl text-center tracking-wide sm:ml-[-6.9rem] mt-4 sm:mt-0 md:ml-[-5.9rem]">
+          STUDIO <span className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-transparent bg-clip-text">DEVSOFT</span>
+        </h1>
+      </div>
       <p className="mt-10 text-lg text-center text-neutral-500 max-w-4xl">
-        Empower your creativity and bring your VR app ideas to life with our
-        intuitive development tools. Get started today and turn your imagination
-        into immersive reality!
+      <h3>SOLUCIONES WEB INNOVADORAS</h3>
+Creando experiencias digitales con un toque de creatividad
+Studio DevSoft se especializa en diseñar y desarrollar sitios web de vanguardia que cautiven y atraigan a los usuarios. Nuestro equipo de expertos está dedicado a hacer realidad su visión a través de soluciones web innovadoras.
       </p>
-      <div className="flex justify-center my-10">
+      <div className="flex justify-center my-12">
         <a
           href="#"
-          className="bg-gradient-to-r from-orange-500 to-orange-800 py-3 px-4 mx-3 rounded-md"
+          className="bg-gradient-to-r from-cyan-500 to-emerald-500 py-4 px-8 rounded-md text-white"
         >
-          Start for free
-        </a>
-        <a href="#" className="py-3 px-4 mx-3 rounded-md border">
-          Documentation
+          Consultá ahora
         </a>
       </div>
-      <div className="flex mt-10 justify-center">
-        <video
-          autoPlay
-          loop
-          muted
-          className="rounded-lg w-1/2 border border-orange-700 shadow-sm shadow-orange-400 mx-2 my-4"
-        >
-          <source src={video1} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video
-          autoPlay
-          loop
-          muted
-          className="rounded-lg w-1/2 border border-orange-700 shadow-sm shadow-orange-400 mx-2 my-4"
-        >
-          <source src={video2} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      <div className="flex mt-10 justify-center"></div>
     </div>
   );
 };

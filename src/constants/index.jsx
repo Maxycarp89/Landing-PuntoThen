@@ -12,6 +12,9 @@ import user4 from "../assets/profile-pictures/user4.jpg";
 import user5 from "../assets/profile-pictures/user5.jpg";
 import user6 from "../assets/profile-pictures/user6.jpg";
 
+import IA from "../assets/images/IA.jpg"
+import desarrolloWeb from "../assets/images/desarrollo-web.jpg"
+
 export const navItems = [
   { label: "Features", href: "#" },
   { label: "Workflow", href: "#" },
@@ -61,39 +64,45 @@ export const testimonials = [
 export const features = [
   {
     icon: <BotMessageSquare />,
-    text: "Drag-and-Drop Interface",
+    text: "Desarrollo web",
     description:
-      "Easily design and arrange your VR environments with a user-friendly drag-and-drop interface.",
+      "Cree sitios web impresionantes adaptados a su marca.",
+      image:IA
   },
   {
     icon: <Fingerprint />,
-    text: "Multi-Platform Compatibility",
+    text: "Soluciones de comercio electrónico",
     description:
-      "Build VR applications that run seamlessly across multiple platforms, including mobile, desktop, and VR headsets.",
+      "Aumente las ventas con una tienda en línea fácil de usar.",
+      image:desarrolloWeb
   },
   {
     icon: <ShieldHalf />,
-    text: "Built-in Templates",
+    text: "Desarrollo de aplicaciones móviles ",
     description:
-      "Jumpstart your VR projects with a variety of built-in templates for different types of applications and environments.",
+      "Aplicaciones innovadoras multiplataformas.",
+      image:user3
   },
   {
     icon: <BatteryCharging />,
-    text: "Real-Time Preview",
+    text: "Optimización SEO",
     description:
-      "Preview your VR application in real-time as you make changes, allowing for quick iterations and adjustments.",
+      "Genere tráfico orgánico y aumente la visibilidad en línea.",
+      image:user4
   },
   {
     icon: <PlugZap />,
-    text: "Collaboration Tools",
+    text: "Diseño gráfico",
     description:
-      "Work together with your team in real-time on VR projects, enabling seamless collaboration and idea sharing.",
+      "Imágenes llamativas que cautivan a tu audiencia.",
+      image:user5
   },
   {
     icon: <GlobeLock />,
-    text: "Analytics Dashboard",
+    text: "Automatizaciones con IA",
     description:
-      "Gain valuable insights into user interactions and behavior within your VR applications with an integrated analytics dashboard.",
+      "Contenido atractivo que cuente la historia de tú marca.",
+      image:user6
   },
 ];
 
