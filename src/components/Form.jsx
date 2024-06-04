@@ -72,63 +72,63 @@ const Form = () => {
     return (
         <form className="max-w-lg mx-auto p-4" onSubmit={handleSubmit}>
             <div className="mb-4">
-                <label className="block text-gray-700">Nombre</label>
+                <label className="block text-sm font-normal italic text-neutral-600">Nombre</label>
                 <input
                     type="text"
                     name="nombre"
                     value={formData.nombre}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border rounded"
+                    className="w-full px-3 py-2 bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin"
                 />
                 {errors.nombre && <p className="text-red-500">{errors.nombre}</p>}
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700">Apellido</label>
+                <label className="block text-sm font-normal italic text-neutral-600">Apellido</label>
                 <input
                     type="text"
                     name="apellido"
                     value={formData.apellido}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border rounded"
+                    className="w-full px-3 py-2 bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin"
                 />
                 {errors.apellido && <p className="text-red-500">{errors.apellido}</p>}
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700">Celular</label>
+                <label className="block text-sm font-normal italic text-neutral-600">Celular</label>
                 <input
                     type="text"
                     name="celular"
                     value={formData.celular}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border rounded"
+                    className="w-full px-3 py-2 bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin"
                 />
                 {errors.celular && <p className="text-red-500">{errors.celular}</p>}
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700">Email</label>
+                <label className="block text-sm font-normal italic text-neutral-600">Email</label>
                 <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border rounded"
+                    className="w-full px-3 py-2 bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin"
                 />
                 {errors.email && <p className="text-red-500">{errors.email}</p>}
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700">Mensaje</label>
+                <label className="block text-sm font-normal italic text-neutral-600">Mensaje</label>
                 <textarea
                     name="mensaje"
                     value={formData.mensaje}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border rounded"
+                    className="w-full px-3 py-2 bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin"
                     maxLength="300"
                 />
                 {errors.mensaje && <p className="text-red-500">{errors.mensaje}</p>}
             </div>
             <button
                 type="submit"
-                className="w-full bg-blue-500 text-white py-2 rounded"
+                className="bg-gradient-to-r from-cyan-500 to-emerald-500 py-2 px-3 rounded-md"
             >
                 Enviar
             </button>
