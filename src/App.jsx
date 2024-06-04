@@ -1,10 +1,11 @@
+import Form from "./components/Form";
 import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import FeatureSection from "./components/FeatureSection";
-import Workflow from "./components/Workflow";
 import Footer from "./components/Footer";
 import Pricing from "./components/Pricing";
+import Workflow from "./components/Workflow";
+import HeroSection from "./components/HeroSection";
 import Testimonials from "./components/Testimonials";
+import FeatureSection from "./components/FeatureSection";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Workflow />
         <Pricing />
         <Testimonials />
+        <Form />
         <Footer />
       </div>
     </>
