@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 const Form = () => {
     const [errors, setErrors] = useState({});
@@ -9,26 +9,32 @@ const Form = () => {
         email: '',
         mensaje: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
+    const handleChange = useCallback((e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }));
+    }, []);
 
     const validate = () => {
         const errors = {};
-        if (!/^[a-zA-Z]+$/.test(formData.nombre)) {
+        const nameRegex = /^[a-zA-Z]+$/;
+        const numberRegex = /^\d+$/;
+        const emailRegex = /\S+@\S+\.\S+/;
+
+        if (!nameRegex.test(formData.nombre)) {
             errors.nombre = 'El nombre solo debe contener letras';
         }
-        if (!/^[a-zA-Z]+$/.test(formData.apellido)) {
+        if (!nameRegex.test(formData.apellido)) {
             errors.apellido = 'El apellido solo debe contener letras';
         }
-        if (!/^\d+$/.test(formData.celular)) {
+        if (!numberRegex.test(formData.celular)) {
             errors.celular = 'El celular solo debe contener números';
         }
-        if (!/\S+@\S+\.\S+/.test(formData.email)) {
+        if (!emailRegex.test(formData.email)) {
             errors.email = 'El email no es válido';
         }
         if (formData.mensaje.length > 300) {
@@ -37,22 +43,24 @@ const Form = () => {
         return errors;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = useCallback(async (e) => {
         e.preventDefault();
-        const errors = validate();
-        if (Object.keys(errors).length > 0) {
-            setErrors(errors);
+        const validationErrors = validate();
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
         } else {
             setErrors({});
-            console.log(formData);
-            fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            }).then(response => {
+            setIsSubmitting(true);
+            try {
+                const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
                 if (response.ok) {
                     alert('Formulario enviado con éxito');
                     setFormData({
@@ -65,72 +73,47 @@ const Form = () => {
                 } else {
                     alert('Error al enviar el formulario');
                 }
-            });
+            } catch (error) {
+                alert('Hubo un problema al enviar el formulario');
+            } finally {
+                setIsSubmitting(false);
+            }
         }
-    };
+    }, [formData]);
 
     return (
         <form className="max-w-lg mx-auto p-4" onSubmit={handleSubmit}>
-            <div className="mb-4">
-                <label className="block text-sm font-normal italic text-neutral-600">Nombre</label>
-                <input
-                    type="text"
-                    name="nombre"
-                    value={formData.nombre}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin"
-                />
-                {errors.nombre && <p className="text-red-500">{errors.nombre}</p>}
-            </div>
-            <div className="mb-4">
-                <label className="block text-sm font-normal italic text-neutral-600">Apellido</label>
-                <input
-                    type="text"
-                    name="apellido"
-                    value={formData.apellido}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin"
-                />
-                {errors.apellido && <p className="text-red-500">{errors.apellido}</p>}
-            </div>
-            <div className="mb-4">
-                <label className="block text-sm font-normal italic text-neutral-600">Celular</label>
-                <input
-                    type="text"
-                    name="celular"
-                    value={formData.celular}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin"
-                />
-                {errors.celular && <p className="text-red-500">{errors.celular}</p>}
-            </div>
-            <div className="mb-4">
-                <label className="block text-sm font-normal italic text-neutral-600">Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin"
-                />
-                {errors.email && <p className="text-red-500">{errors.email}</p>}
-            </div>
-            <div className="mb-4">
-                <label className="block text-sm font-normal italic text-neutral-600">Mensaje</label>
-                <textarea
-                    name="mensaje"
-                    value={formData.mensaje}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin"
-                    maxLength="300"
-                />
-                {errors.mensaje && <p className="text-red-500">{errors.mensaje}</p>}
-            </div>
+            {['nombre', 'apellido', 'celular', 'email', 'mensaje'].map((field) => (
+                <div className="mb-4" key={field}>
+                    <label className="block text-sm font-normal italic text-neutral-600">
+                        {field.charAt(0).toUpperCase() + field.slice(1)}
+                    </label>
+                    {field !== 'mensaje' ? (
+                        <input
+                            type={field === 'email' ? 'email' : 'text'}
+                            name={field}
+                            value={formData[field]}
+                            onChange={handleChange}
+                            className="w-full px-3 py-2 bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin"
+                        />
+                    ) : (
+                        <textarea
+                            name={field}
+                            value={formData[field]}
+                            onChange={handleChange}
+                            className="w-full px-3 py-2 bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin"
+                            maxLength="300"
+                        />
+                    )}
+                    {errors[field] && <p className="text-red-500">{errors[field]}</p>}
+                </div>
+            ))}
             <button
                 type="submit"
                 className="bg-gradient-to-r from-cyan-500 to-emerald-500 py-2 px-3 rounded-md"
+                disabled={isSubmitting}
             >
-                Enviar
+                {isSubmitting ? 'Enviando...' : 'Enviar'}
             </button>
         </form>
     );
