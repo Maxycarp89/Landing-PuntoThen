@@ -1,9 +1,9 @@
-import { BotMessageSquare } from "lucide-react";
-import { BatteryCharging } from "lucide-react";
-import { Fingerprint } from "lucide-react";
-import { ShieldHalf } from "lucide-react";
-import { PlugZap } from "lucide-react";
-import { GlobeLock } from "lucide-react";
+import { MonitorCheck } from "lucide-react";
+import { Brain } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
+import { TabletSmartphone } from "lucide-react";
+import { Wand } from "lucide-react";
+import { Globe } from "lucide-react";
 
 import user1 from "../assets/profile-pictures/user1.jpg";
 import user2 from "../assets/profile-pictures/user2.jpg";
@@ -13,13 +13,17 @@ import user5 from "../assets/profile-pictures/user5.jpg";
 import user6 from "../assets/profile-pictures/user6.jpg";
 
 import IA from "../assets/images/IA.jpg"
-import desarrolloWeb from "../assets/images/desarrollo-web.jpg"
+import ecommerceSolutions from "../assets/images/desarrollo-web.jpg"
+import webDesign from "../assets/images/web-design.jpg"
+import SEO from "../assets/images/SEO.jpg"
+import webDevelopment from "../assets/images/webDevelopment.jpg"
+import mobileApp from "../assets/images/mobile.jpg"
 
 export const navItems = [
-  { label: "Features", href: "#" },
-  { label: "Workflow", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Testimonials", href: "#" },
+  { label: "Features", href: "Features" },
+  { label: "Workflow", href: "Workflow" },
+  { label: "Pricing", href: "Pricing" },
+  { label: "Testimonials", href: "Testimonials" },
 ];
 
 export const testimonials = [
@@ -63,46 +67,46 @@ export const testimonials = [
 
 export const features = [
   {
-    icon: <BotMessageSquare />,
+    icon: <MonitorCheck />,
     text: "Desarrollo web",
     description:
-      "Cree sitios web impresionantes adaptados a su marca.",
-      image:IA
+      "Creamos sitios web impresionantes que reflejan la esencia de tu marca y proporcionan una experiencia de usuario excepcional.",
+    image: webDevelopment
   },
   {
-    icon: <Fingerprint />,
+    icon: <ShoppingBag />,
     text: "Soluciones de comercio electrónico",
     description:
-      "Aumente las ventas con una tienda en línea fácil de usar.",
-      image:desarrolloWeb
+      "Impulsa tus ventas con una tienda en línea intuitiva y fácil de usar, diseñada para maximizar la conversión y la satisfacción del cliente.",
+    image: ecommerceSolutions
   },
   {
-    icon: <ShieldHalf />,
-    text: "Desarrollo de aplicaciones móviles ",
+    icon: <TabletSmartphone />,
+    text: "Desarrollo de aplicaciones móviles",
     description:
-      "Aplicaciones innovadoras multiplataformas.",
-      image:user3
+      "Desarrollamos aplicaciones innovadoras y multiplataforma que ofrecen una experiencia de usuario fluida y accesible en todos los dispositivos.",
+    image: mobileApp
   },
   {
-    icon: <BatteryCharging />,
+    icon: <Globe />,
     text: "Optimización SEO",
     description:
-      "Genere tráfico orgánico y aumente la visibilidad en línea.",
-      image:user4
+      "Mejora tu visibilidad en línea y atrae tráfico orgánico con nuestras estrategias de SEO personalizadas y efectivas.",
+    image: SEO
   },
   {
-    icon: <PlugZap />,
+    icon: <Wand />,
     text: "Diseño gráfico",
     description:
-      "Imágenes llamativas que cautivan a tu audiencia.",
-      image:user5
+      "Creamos imágenes y diseños gráficos impactantes que capturan la atención de tu audiencia y comunican eficazmente tu mensaje.",
+    image: webDesign
   },
   {
-    icon: <GlobeLock />,
+    icon: <Brain />,
     text: "Automatizaciones con IA",
     description:
-      "Contenido atractivo que cuente la historia de tú marca.",
-      image:user6
+      "Incorpora la inteligencia artificial en tus procesos para automatizar tareas, mejorar la eficiencia y proporcionar experiencias personalizadas a tus clientes.",
+    image: IA
   },
 ];
 
