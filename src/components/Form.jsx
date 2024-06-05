@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Form = () => {
     const [errors, setErrors] = useState({});
@@ -52,16 +53,17 @@ const Form = () => {
             setErrors({});
             setIsSubmitting(true);
             try {
-                const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
+                const templateParams = {
+                    from_name: formData.nombre,
+                    from_lastname: formData.apellido,
+                    from_phone: formData.celular,
+                    from_email: formData.email,
+                    message: formData.mensaje
+                };
 
-                if (response.ok) {
+                const result = await emailjs.send('default_service', 'template_jial5yc', templateParams, 'pVZs9Q-RcZD-YR5Om');
+
+                if (result.status === 200) {
                     alert('Formulario enviado con éxito');
                     setFormData({
                         nombre: '',
