@@ -12,6 +12,13 @@ import user4 from "../assets/profile-pictures/user4.jpg";
 import user5 from "../assets/profile-pictures/user5.jpg";
 import user6 from "../assets/profile-pictures/user6.jpg";
 
+import partner1 from "../assets/images/partners/partner1.png"
+import partner3 from "../assets/images/partners/partner3.png"
+import partner2 from "../assets/images/partners/partner2.png"
+import partner5 from "../assets/images/partners/partner4.png"
+import partner4 from "../assets/images/partners/partner4.png"
+import partner6 from "../assets/images/partners/partner6.png"
+
 import IA from "../assets/images/IA.jpg"
 import ecommerceSolutions from "../assets/images/desarrollo-web.jpg"
 import webDesign from "../assets/images/web-design.jpg"
@@ -28,40 +35,38 @@ export const navItems = [
 
 export const testimonials = [
   {
-    user: "John Doe",
-    company: "Stellar Solutions",
-    image: user1,
-    text: "I am extremely satisfied with the services provided. The team was responsive, professional, and delivered results beyond my expectations.",
+    user: "Carolina Gómez",
+    company: "Blue Horizon",
+    text: "Estoy muy satisfecho con los servicios prestados. El equipo fue receptivo, profesional y obtuvo resultados que superaron mis expectativas.",
   },
   {
-    user: "Jane Smith",
-    company: "Blue Horizon Technologies",
+    user: "Florencia Strada",
+    company: "Blue Horizon",
     image: user2,
-    text: "I couldn't be happier with the outcome of our project. The team's creativity and problem-solving skills were instrumental in bringing our vision to life",
+    text: "No podría estar más feliz con el resultado de nuestro proyecto. La creatividad y las habilidades de resolución de problemas del equipo fueron fundamentales para hacer realidad nuestra visión.",
   },
   {
-    user: "David Johnson",
-    company: "Quantum Innovations",
+    user: "Pablo Sánchez",
+    company: "Quantum",
     image: user3,
-    text: "Working with this company was a pleasure. Their attention to detail and commitment to excellence are commendable. I would highly recommend them to anyone looking for top-notch service.",
+    text: "Trabajar con esta empresa fue un placer. Su atención al detalle y compromiso con la excelencia son admirables. Se los recomendaría sin dudar a cualquiera que busque un servicio de primer nivel.",
   },
   {
-    user: "Ronee Brown",
+    user: "Carlos Martínez",
     company: "Fusion Dynamics",
-    image: user4,
-    text: "Working with the team at XYZ Company was a game-changer for our project. Their attention to detail and innovative solutions helped us achieve our goals faster than we thought possible. We are grateful for their expertise and professionalism!",
+    text: "Trabajar con el equipo de Studio DevSoft fue un punto de inflexión para nuestro proyecto. Su atención al detalle y sus soluciones innovadoras nos ayudaron a alcanzar nuestros objetivos más rápido de lo que creíamos posible. ¡Estamos agradecidos por su profesionalismo!",
   },
   {
-    user: "Michael Wilson",
-    company: "Visionary Creations",
+    user: "Ricardo Vega",
+    company: "Isadora",
     image: user5,
-    text: "I am amazed by the level of professionalism and dedication shown by the team. They were able to exceed our expectations and deliver outstanding results.",
+    text: "Estoy agradecida por el apoyo constante y la dedicación demostrada por este equipo. ¡Los mejores!",
   },
   {
-    user: "Emily Davis",
-    company: "Synergy Systems",
+    user: "Emilia Borchard",
+    company: "Synergy",
     image: user6,
-    text: "The team went above and beyond to ensure our project was a success. Their expertise and dedication are unmatched. I look forward to working with them again in the future.",
+    text: "El equipo hizo todo lo posible para garantizar que nuestro proyecto fuera un éxito. Su experiencia y dedicación son incomparables. Espero volver a trabajar con ellos en el futuro.",
   },
 ];
 
@@ -113,24 +118,31 @@ export const features = [
 export const checklistItems = [
   {
     title: "Code merge made easy",
-    description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+    image:  partner1,
   },
   {
     title: "Review code without worry",
-    description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+    image:partner2,
+
   },
   {
     title: "AI Assistance to reduce time",
-    description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+    image:partner3,
+
   },
   {
     title: "Share work in minutes",
-    description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
-  },
+  image: partner4,
+},
+{
+  title: "Share work in minutes",
+image: partner5,
+},
+{
+  title: "Share work in minutes",
+ image: partner6,
+},
+
 ];
 
 export const pricingOptions = [

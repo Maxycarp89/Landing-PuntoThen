@@ -1,11 +1,21 @@
 import logo from "../assets/profile-pictures/logodevsoft.png"
+import { motion as Motion } from "framer-motion"
 
 
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col items-center mt-6 lg:mt-20">
-      <div className="flex flex-col sm:flex-row items-center justify-center w-full">
+    
+    <Motion.div 
+    className="flex flex-col items-center mt-6 lg:mt-20 animate-flip-up animate-once animate-ease-in-out"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1.2 , type: 'fade',delay: 0.2 }}
+    exit={{ opacity: 0 }}
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.7 }}
+    >
+      <div className="flex flex-col sm:flex-row items-center justify-center w-full animate-flip-up animate-once animate-ease-in-out">
         <img src={logo} className="w-48 h-48 m-0 p-0 sm:w-72 md:w-96 lg:w-96" alt="logo" />
         <h1 className="text-5xl sm:text-6xl lg:text-7xl text-center tracking-wide sm:ml-[-6.9rem] mt-4 sm:mt-0 md:ml-[-5.9rem]">
           STUDIO <span className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-transparent bg-clip-text transition-transform duration-300 hover:scale-105">DEVSOFT</span>
@@ -25,7 +35,8 @@ En  <span className="text-white"> STUDIO DEVSOFT</span> nos especializamos en di
         </a>
       </div>
       <div className="flex mt-10 justify-center"></div>
-    </div>
+    </Motion.div>
+    
   );
 };
 
