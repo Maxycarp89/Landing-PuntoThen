@@ -13,10 +13,10 @@ import user5 from "../assets/profile-pictures/user5.jpg";
 import user6 from "../assets/profile-pictures/user6.jpg";
 
 import partner1 from "../assets/images/partners/partner1.png"
-import partner3 from "../assets/images/partners/partner3.png"
 import partner2 from "../assets/images/partners/partner2.png"
-import partner5 from "../assets/images/partners/partner4.png"
+import partner3 from "../assets/images/partners/partner3.png"
 import partner4 from "../assets/images/partners/partner4.png"
+import partner5 from "../assets/images/partners/partner5.png"
 import partner6 from "../assets/images/partners/partner6.png"
 
 import IA from "../assets/images/IA.jpg"
