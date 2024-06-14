@@ -25,7 +25,7 @@ const Workflow = () => {
             }}
           >
             {allPartners.map((partner, index) => (
-              <div key={index} className="flex-shrink-0 w-[1/8] mx-4">
+              <div key={index} className="flex-shrink-0" style={{ width: `${100 / checklistItems.length}%` }}>
                 <img src={partner.image} alt={partner.title} className="w-48 h-48 object-contain bg-gradient-to-r from-gray-50 to-slate-50 rounded-full" />
               </div>
             ))}
