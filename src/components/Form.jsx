@@ -1,4 +1,4 @@
-import  { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 
 const Form = () => {
@@ -98,7 +98,10 @@ const Form = () => {
     }, [alert]);
 
     return (
-        <div>
+        <div className='mt-20'>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wide">
+                Con<span className="bg-gradient-to-r from-cyan-500 to-emerald-500 text-transparent bg-clip-text mb-20">tacto</span>
+            </h2>
             {alert.message && (
                 <div
                     className={`fixed top-4 right-4 transition-opacity duration-1000 ${alert.type === 'success' ? 'bg-gradient-to-r from-cyan-500 to-emerald-500' : 'bg-red-100 border-red-400 text-red-700'
@@ -140,7 +143,7 @@ const Form = () => {
                 ))}
                 <button
                     type="submit"
-                    className="bg-gradient-to-r from-cyan-500 to-emerald-500 py-2 px-3 rounded-md"
+                    className="inline-flex justify-center items-center text-center w-full h-12 p-5 tracking-tight text-xl hover:bg-gradient-to-r from-cyan-500 to-emerald-800 border-cyan-900 rounded-lg transition duration-200"
                     disabled={isSubmitting}
                 >
                     {isSubmitting ? 'Enviando...' : 'Enviar'}
