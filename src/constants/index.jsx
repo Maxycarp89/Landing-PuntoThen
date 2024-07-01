@@ -19,12 +19,12 @@ import partner4 from "../assets/images/partners/partner4.png"
 import partner5 from "../assets/images/partners/partner5.png"
 import partner6 from "../assets/images/partners/partner6.png"
 
-import IA from "../assets/images/IA.jpg"
-import ecommerceSolutions from "../assets/images/desarrollo-web.jpg"
-import webDesign from "../assets/images/web-design.jpg"
-import SEO from "../assets/images/SEO.jpg"
-import webDevelopment from "../assets/images/webDevelopment.jpg"
-import mobileApp from "../assets/images/mobile.jpg"
+import IA from "../assets/images/IA.webp"
+import ecommerceSolutions from "../assets/images/desarrollo-web.webp"
+import webDesign from "../assets/images/web-design.webp"
+import SEO from "../assets/images/SEO.webp"
+import webDevelopment from "../assets/images/webDevelopment.webp"
+import mobileApp from "../assets/images/mobile.webp"
 
 export const navItems = [
   { label: "Features", href: "Features" },
